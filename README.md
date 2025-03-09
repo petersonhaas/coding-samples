@@ -50,3 +50,32 @@ The naming conventions for the computed variables/columns are as follows:
 
     Corporate Profits as Share of GDI: Share = CP / GDI * 100 -->  CP as a share of GDI under the same vintage.
     - E.g. First Annual Nominal CP as share of First Annual Nominal GDI: A1 NCP share 
+
+## 2. Extract Revisions
+
+The ```Extract_Revisions.ipynb``` Jupyter notebook is designed to extract key data releases and compute revisions for various economic variables published by the National Income and Product Accounts (NIPA). These variables were aggregated in historical data through the Real-Time Data Set for Macroeconomists (RTDSM) maintained by the Federal Reserve Bank of Philadelphia. The key variables used are Gross Domestic Income (GDI), Gross Domestic Product (GDP), Corporate Profits, and GDP Deflator.
+
+**Vintages**: The notebook extracts revisions across multiple vintages or stages of data releases. These stages correspond to the different points in time at which updated data is released, reflecting revisions based on newly available data and refined methodologies:
+
+    - Quarterly Releases: First (Initial), Second, Third Release
+    - Annual Revisions: First (A1), Second (A2), Third Annual Revision (A3)
+    - Comprehensive Revision: First Comprehensive Revision (C1)
+    - Latest (Final) Release: Final Release
+    
+**Workflow**: The notebook processes these different vintages by:  
+
+    - Deflate Nominal to Real Values: Creates columns with real terms by adjusting nominal values for inflation using the GDP deflator.
+    - Extract Vintages: Extracts values for each variable from each release stage.
+    - Growth Rates: Creates columns to compute SAAR growth rates for each variable using a 4-quarter lag.
+    - Share of Final Release: Calculates share of earlier estimate relative to final release. 
+    - Revisions to Levels: Computes percentage changes in levels between release stages to show how earlier estimates evolve.
+    - Revisions to Growth Rates: Calculates changes in SAAR growth rates between vintages.
+    - Corporate Profits as Share of GDI: Calculates Corporate Profits as a share of GDI for each release stage.
+    - Data Merging: Merges the data from various stages into a single DataFrame for analysis.
+
+**Output**: The final output is a comprehensive merged dataframe that contains data from all release stages. This dataframe enables detailed analysis of how GDI, GDP, and Corporate Profits have been revised over time. The extracted revisions can then be further used for visualizations, statistical analysis, and forecasting.
+
+    - Excel: merged_releases.xlsx
+    - CSV: merged_releases.csv
+
+This notebook provides a complete workflow for extracting, processing, and analyzing the revisions to these key economic indicators.
