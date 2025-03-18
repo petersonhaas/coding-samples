@@ -1,5 +1,5 @@
 # Coding Samples
-This repository includes code examples used in my honors thesis and other personal projects. 
+This repository includes code examples used in economic research and other personal projects. 
 
 ## 1. Economic Outlook (Python, Streamlit, API)
 Public Web Application: https://myfedapp.streamlit.app/
