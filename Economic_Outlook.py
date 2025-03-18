@@ -93,7 +93,6 @@ if search_field:
         df_filtered = df
 
         timeseries = ""
-       
     
         # Repeat the same process for the second indicator (optional input)
         with colA1: 
